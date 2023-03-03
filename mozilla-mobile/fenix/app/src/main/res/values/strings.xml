@@ -21,7 +21,7 @@
     <!-- Placeholder text shown in search bar when using tabs search -->
     <string name="tab_search_hint">Search tabs</string>
     <!-- Placeholder text shown in the search bar when using application search engines -->
-    <string name="application_search_hint">Enter search terms</string>
+    <string name="application_search_hint">Enter Firefox search terms</string>
     <!-- No Open Tabs Message Description -->
     <string name="no_open_tabs_description">Your open tabs will be shown here.</string>
     <!-- No Private Tabs Message Description -->
