@@ -40,7 +40,10 @@ def main():
         help="Path to l10n.toml file, relative to the root of the project folder",
     )
     parser.add_argument(
-        "--json", dest="json_file", help="Save error info as JSON to file"
+        "--json",
+        dest="json_file",
+        help="Save error info as JSON to file",
+        default="errors.json",
     )
     args = parser.parse_args()
 

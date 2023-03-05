@@ -234,7 +234,10 @@ def main():
         "--toml", required=True, dest="toml_path", help="Path to l10n.toml file"
     )
     parser.add_argument(
-        "--json", dest="json_file", help="Save error info as JSON to file"
+        "--json",
+        dest="json_file",
+        help="Save error info as JSON to file",
+        default="errors.json",
     )
     parser.add_argument(
         "--config",

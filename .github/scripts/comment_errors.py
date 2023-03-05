@@ -189,12 +189,14 @@ def main():
         dest="json_file",
         help="Path to JSON file with errors info",
         required=True,
+        default="errors.json",
     )
     parser.add_argument(
         "--dest",
         dest="dest_file",
         help="Path to dest file with comment content",
         required=True,
+        default="comment.txt",
     )
     args = parser.parse_args()
 
