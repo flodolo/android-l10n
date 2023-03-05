@@ -41,9 +41,9 @@ def main():
     )
     parser.add_argument(
         "--json",
+        default="errors.json",
         dest="json_file",
         help="Save error info as JSON to file",
-        default="errors.json",
     )
     args = parser.parse_args()
 
@@ -75,7 +75,11 @@ def main():
                 "text": errors[string_id]["new"],
             }
 
-    if errors:
+    has_errors = False
+    for config_name, config_errors in errors_json.items():
+        if config_errors:
+            has_errors = True
+    if has_errors:
         output = outputErrors(errors_json)
         print(output)
 
