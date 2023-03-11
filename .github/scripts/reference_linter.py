@@ -179,7 +179,7 @@ class QualityCheck:
                         )
 
 
-def outputErrors(errors):
+def outputErrors(errors, new=True):
     """Print error messages"""
 
     output = []
@@ -197,7 +197,10 @@ def outputErrors(errors):
                     output.append(f"- {e}")
                     total += 1
         if total > 0:
-            output.append(f"\n**Total errors:** {total}\n")
+            if new:
+                output.append(f"\n**Total errors:** {total}\n")
+            else:
+                output.append(f"\n**Total new errors:** {total}\n")
 
     return "\n".join(output)
 
