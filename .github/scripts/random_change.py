@@ -6,21 +6,22 @@
 
 import random
 
+
 def main():
     file = "mozilla-mobile/focus-android/app/src/main/res/values/strings.xml"
     with open(file, "r") as f:
         lines = f.readlines()
 
     r = int(random.random() * 1000)
-    lines[8] = f"    <string name=\"action_cancel\">Cancel {r}</string>\n"
+    lines[8] = f'    <string name="action_cancel">Cancel {r}</string>\n'
 
     lines.insert(
-        len(lines) - 1,
-        f"    <string name=\"action_cancel_{r}\">Firefox test</string>\n"
+        len(lines) - 1, f'    <string name="action_cancel_{r}">Firefox test</string>\n'
     )
 
     with open(file, "w") as f:
         f.writelines(lines)
+
 
 if __name__ == "__main__":
     main()
