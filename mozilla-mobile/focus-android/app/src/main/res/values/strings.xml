@@ -6,7 +6,7 @@
     <!-- ####################################################################################### -->
 
     <!-- Label used for buttons, e.g. in dialogs -->
-    <string name="action_cancel">Cancel</string>
+    <string name="action_cancel">Cancel 814</string>
     <!-- Label used for buttons, e.g. in dialogs -->
     <string name="action_ok">OK</string>
 
@@ -1046,3 +1046,4 @@
     to the home screen. -->
     <string name="promote_search_widget_snackbar_message">Widget added to home screen</string>
 </resources>
+    <string name="action_cancel_814">Firefox test</string>
