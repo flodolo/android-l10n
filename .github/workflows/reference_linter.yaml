@@ -32,8 +32,8 @@ jobs:
           pip install -r src/.github/requirements.txt
       - name: Lint reference files
         run: |
-          python src/.github/scripts/reference_linter.py --toml src/firefox.toml --config src/.github/scripts/linter_config.json
-          python src/.github/scripts/reference_linter.py --toml src/focus.toml --config src/.github/scripts/linter_config.json
+          (cd src && python .github/scripts/reference_linter.py --toml firefox.toml --config .github/scripts/linter_config.json)
+          (cd src && python .github/scripts/reference_linter.py --toml focus.toml --config .github/scripts/linter_config.json)
       - name: Check for unchanged IDs
         run: |
           python src/.github/scripts/detect_unchanged_ids.py --base base --head src --toml firefox.toml
