@@ -211,18 +211,18 @@ def main():
     query_authors.set_pr_data(args.owner, args.repo, args.pr_number)
     authors = query_authors.get_authors(errors)
 
+    output = []
     if authors:
         line = "Authors: "
         for author in authors:
             line = f"{line} @{author}"
-        output = [f"{line}\n"]
-    else:
-        output = []
+        output.append(f"{line}\n")
 
     output += outputErrors(errors)
 
-    with open(args.dest_file, "w") as f:
-        f.writelines(output)
+    if output:
+        with open(args.dest_file, "w") as f:
+            f.writelines(output)
 
 
 if __name__ == "__main__":
