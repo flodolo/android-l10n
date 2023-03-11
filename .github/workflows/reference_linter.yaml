@@ -75,7 +75,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: errors-list
-          path: errors.txt
+          path: errors.*
           if-no-files-found: ignore
       - name: Fail on errors
         run: |
