@@ -59,7 +59,7 @@ jobs:
           fi
 
           if [[ $pr != "none" ]]; then
-            python src/.github/scripts/comment_errors.py --token ${{ secrets.ANDROID_GITHUB_TOKEN }} --repo ${{ github.event.repository.name }} --owner ${{ github.repository_owner }} --pr $pr
+            python src/.github/scripts/comment_errors.py --token ${{ secrets.ANDROID_GITHUB_TOKEN }} --repo ${{ github.event.repository.name }} --owner ${{ github.repository_owner }} --pr $pr --run ${{ github.run_id }}
             if [ -f "comment.txt" ]; then
               gh pr comment ${{ github.event.number }} --repo ${{ github.repository }} --body-file comment.txt
             fi

@@ -185,6 +185,9 @@ def main():
         "--pr", dest="pr_number", help="Number of the current PR", required=True
     )
     parser.add_argument(
+        "--run", dest="run_id", help="ID of GitHub action run", required=True
+    )
+    parser.add_argument(
         "--json",
         default="errors.json",
         dest="json_file",
@@ -211,7 +214,7 @@ def main():
     query_authors.set_pr_data(args.owner, args.repo, args.pr_number)
     authors = query_authors.get_authors(errors)
 
-    output = []
+    output = [f"Run ID: {args.run_id}\n"]
     if authors:
         line = "Authors: "
         for author in authors:
