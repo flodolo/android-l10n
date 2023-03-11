@@ -1,0 +1,27 @@
+name: Test change to file
+on:
+  workflow_dispatch:
+jobs:
+  copy:
+    name: Test automation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone android-l10n repository
+        uses: actions/checkout@v3
+      - name: Set up Python 3
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - name: Change file
+        run: |
+          python .github/scripts/random_change.py
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.ANDROID_GITHUB_TOKEN }}
+          branch: test_l10n_updates
+          author: l10n-bot <actions@users.noreply.github.com>
+          commit-message: "Import l10n test"
+          title: "Import l10n test"
+          body: "test"
+          labels: l10n-bot
