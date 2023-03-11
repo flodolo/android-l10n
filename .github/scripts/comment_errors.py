@@ -166,7 +166,7 @@ class QueryAuthors:
             # Check if the author is mentioned in the body of the comment
             comment_body = comment["body"]
             for author in self.authors[:]:
-                if f"@{author}" in comment_body:
+                if f"@ {author}" in comment_body:
                     self.authors.remove(author)
 
             # If the list of authors is empty, return early
@@ -215,7 +215,7 @@ def main():
     if authors:
         line = "Authors: "
         for author in authors:
-            line = f"{line} @{author}"
+            line = f"{line} @ {author}"
         output.append(f"{line}\n")
 
     output += outputErrors(errors)
