@@ -1,6 +1,8 @@
 name: Linter for reference content
 on:
   push:
+    branches:
+      - main
     paths:
       - ".github/workflows/reference_linter.yaml"
       - ".github/scripts/reference_linter.py"
@@ -17,7 +19,6 @@ jobs:
         with:
           path: src
       - name: Clone repository (default branch)
-        if: github.event_name == 'pull_request'
         uses: actions/checkout@v3
         with:
           path: base
@@ -34,7 +35,6 @@ jobs:
           python src/.github/scripts/reference_linter.py --toml src/firefox.toml --config src/.github/scripts/linter_config.json
           python src/.github/scripts/reference_linter.py --toml src/focus.toml --config src/.github/scripts/linter_config.json
       - name: Check for unchanged IDs
-        if: github.event_name == 'pull_request'
         run: |
             python src/.github/scripts/detect_unchanged_ids.py --base base --head src --toml firefox.toml
             python src/.github/scripts/detect_unchanged_ids.py --base base --head src --toml focus.toml
