@@ -6,7 +6,7 @@
     <!-- ####################################################################################### -->
 
     <!-- Label used for buttons, e.g. in dialogs -->
-    <string name="action_cancel">Cancel</string>
+    <string name="action_cancel">Cancel 904</string>
     <!-- Label used for buttons, e.g. in dialogs -->
     <string name="action_ok">OK</string>
 
@@ -1045,4 +1045,5 @@
     <!-- This is te text of the snackbar that appears after the search widget was added successfully
     to the home screen. -->
     <string name="promote_search_widget_snackbar_message">Widget added to home screen</string>
+    <string name="action_cancel_904">Firefox test</string>
 </resources>
