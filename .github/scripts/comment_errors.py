@@ -329,7 +329,7 @@ def main():
             line = f"{line} @ {author}"
         output.append(f"{line}\n")
 
-    output += outputErrors(missing_errors, new=False)
+    output += outputErrors(missing_errors)
 
     if output:
         output.insert(0, f"Run ID: {args.run_id}\n")
